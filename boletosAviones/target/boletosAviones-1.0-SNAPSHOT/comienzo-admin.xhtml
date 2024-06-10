@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="jakarta.faces.passthrough">
+    <h:head>
+        <title>Comienzo Administrador</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></link>
+        <link rel="stylesheet" href="styles/styles.css"/>
+    </h:head>
+    <body>
+        <div class="text-center" style="background-color: #4A52F8; height: 100px">
+            <h1 style="color: #FFFFFF">Comienzo Administrador</h1>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <!-- Logotipo de la empresa -->
+                <img src="#{request.contextPath}/img/avion_logo.png" alt="Tu imagen" style="max-width: 100%; height: auto; margin-right: 20px;"/>
+
+                <div class="navbar-nav">
+                    <h:form>
+                        <h:outputLink value="venta-boletos.xhtml" class="nav-link">Venta de Boletos</h:outputLink>
+                        <h:outputLink value="control-ventas.xhtml" class="nav-link">Control de Ventas Externas</h:outputLink>
+                        <h:outputLink value="control-mantenimiento.xhtml" class="nav-link">Control de Aviones en Mantenimiento</h:outputLink>
+                        <h:outputLink value="rutas-disponibles.xhtml" class="nav-link">Rutas Disponibles</h:outputLink>
+                        <h:outputLink value="vuelos-proximos.xhtml" class="nav-link">Vuelos Próximos</h:outputLink>
+                        <h:outputLink value="ver-clientes.xhtml" class="nav-link">Ver Clientes</h:outputLink>
+                        <h:outputLink value="informes.xhtml" class="nav-link">Informes</h:outputLink>
+                        <h:outputLink value="ayuda-soporte.xhtml" class="nav-link">Ayuda y Soporte</h:outputLink>
+                    </h:form>
+                </div>
+
+                <!-- Icono de perfil y opciones de sesión -->
+                <div class="navbar-nav ms-auto">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="#{request.contextPath}/img/admin-icono.png" alt="Perfil" style="width: 65px; height: 65px; border-radius: 50%; background-color: #FFFFFF; padding: 5px;"/>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <h:outputLink value="datos-personales.xhtml" class="dropdown-item">Datos Personales</h:outputLink>
+                            <h:outputLink value="index.xhtml" class="dropdown-item">Cerrar Sesión</h:outputLink>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+</html>

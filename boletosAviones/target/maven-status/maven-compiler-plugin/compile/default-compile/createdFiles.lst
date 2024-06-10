@@ -1,0 +1,10 @@
+com\mycompany\boletosaviones\LoginController.class
+com\mycompany\boletosaviones\VueloController.class
+com\mycompany\boletosaviones\resources\JakartaEE10Resource.class
+com\mycompany\boletosaviones\Vuelo.class
+com\mycompany\boletosaviones\Clientes.class
+com\mycompany\boletosaviones\UserData.class
+com\mycompany\boletosaviones\Usuarios.class
+com\mycompany\boletosaviones\DBManager.class
+com\mycompany\boletosaviones\UsuariosDatosBD.class
+com\mycompany\boletosaviones\JakartaRestConfiguration.class

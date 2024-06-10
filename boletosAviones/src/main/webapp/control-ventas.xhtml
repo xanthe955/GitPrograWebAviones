@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Control de Ventas Externas</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 20px;
+            }
+
+            .header {
+                background-color: #4A52F8;
+                height: 100px;
+                text-align: center;
+                line-height: 100px; /* Ajusta la altura del texto para centrarlo verticalmente */
+            }
+
+            .header h1 {
+                color: #FFFFFF;
+                margin: 0;
+            }
+
+            .logo {
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            .logo img {
+                max-width: 200px; /* Ajusta el tamaño máximo del logotipo según tu diseño */
+            }
+
+            .sales-control {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 600px;
+                margin: 0 auto;
+            }
+
+            .sales-control h2 {
+                color: #4A52F8;
+                text-align: center;
+            }
+
+            .sales-notice {
+                margin-top: 20px;
+            }
+
+            .back-button {
+                display: block;
+                margin-top: 20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img src="#{request.contextPath}/img/avion_logo.png" alt="Avión Logo" style="max-width: 100px; margin-right: 10px; float: left;" />
+            <h1 style="display: inline-block; margin: 0 auto;">Control de Ventas Externas</h1>
+        </div>
+
+        <div class="logo">
+            <!-- Aquí colocarás el código o componente necesario para mostrar el logotipo de la empresa -->
+            <!-- Por ejemplo: <img src="ruta_del_logotipo" alt="Logo de la empresa" /> -->
+        </div>
+
+        <div class="sales-control">
+            <h2>Reporte y Control de Ventas</h2>
+
+            <!-- Aquí irán los elementos para generar el reporte y controlar las ventas -->
+            <!-- Puedes agregar formularios, tablas, gráficos, etc., según tus necesidades -->
+
+            <div class="sales-notice">
+                <!-- Aquí mostrarás los avisos de las ventas realizadas por periodo -->
+                <!-- Por ejemplo: <p>Ventas realizadas este mes: X</p> -->
+            </div>
+        </div>
+
+        <a href="comienzo-admin.xhtml" class="back-button">&lt; Regresar a Comienzo Admin</a>
+    </body>
+</html>

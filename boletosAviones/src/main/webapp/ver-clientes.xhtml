@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Ver Clientes</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 20px;
+            }
+
+            .header {
+                background-color: #4A52F8;
+                height: 100px;
+                text-align: center;
+                line-height: 100px;
+            }
+
+            .header img {
+                max-width: 100px;
+                margin-right: 10px;
+            }
+
+            .header h1 {
+                color: #FFFFFF;
+                margin: 0;
+                display: inline-block;
+            }
+
+            /* Agrega estilos adicionales según sea necesario */
+
+            .customers-section {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 80%;
+                margin: 20px auto;
+            }
+
+            .customers-table {
+                width: 100%;
+                margin-top: 20px;
+                border-collapse: collapse;
+            }
+
+            .customers-table th, .customers-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .back-button {
+                display: block;
+                margin-top: 20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img src="#{request.contextPath}/img/avion_logo.png" alt="Logo de la Empresa" />
+            <h1>Ver Clientes</h1>
+        </div>
+
+        <div class="customers-section">
+            <table class="customers-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Últimos Vuelos</th>
+                        <th>Vuelos Pendientes</th>
+                        <th>Información de Contacto</th>
+                        <th>Millas Acumuladas</th>
+                        <!-- Agrega más encabezados según sea necesario -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Agrega filas con información de clientes -->
+                </tbody>
+            </table>
+        </div>
+
+        <a href="comienzo-admin.xhtml" class="back-button">&lt; Regresar a Pantalla Principal de Administrador</a>
+    </body>
+</html>

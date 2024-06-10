@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Rutas Disponibles</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 20px;
+            }
+
+            .header {
+                background-color: #4A52F8;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .header img {
+                max-width: 100px;
+                margin-right: 10px;
+            }
+
+            .header h1 {
+                color: #FFFFFF;
+                margin: 0;
+                display: inline-block;
+            }
+
+            .filters {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+
+            .filter-group {
+                margin-bottom: 10px;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                color: #555;
+            }
+
+            select, input {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+            }
+
+            input[type="submit"] {
+                background-color: #4caf50;
+                color: #fff;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #4A52F8;
+                color: #FFFFFF;
+            }
+            
+            .back-button {
+                display: block;
+                margin-top: 20px;
+                text-align: center; /* Alinea el texto al centro */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img src="#{request.contextPath}/img/avion_logo.png" alt="Logo de la Empresa" />
+            <h1>Rutas Disponibles</h1>
+        </div>
+
+        <div class="filters">
+            <form action="#" method="post">
+                <div class="filter-group">
+                    <label for="destino">Destino:</label>
+                    <input type="text" id="destino" name="destino" />
+                </div>
+
+                <div class="filter-group">
+                    <label for="nacional">Nacional:</label>
+                    <select id="nacional" name="nacional">
+                        <option value="true">Sí</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="internacional">Internacional:</label>
+                    <select id="internacional" name="internacional">
+                        <option value="true">Sí</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" />
+                </div>
+
+                <div class="filter-group">
+                    <label for="origen">Origen:</label>
+                    <input type="text" id="origen" name="origen" />
+                </div>
+
+                <div class="filter-group">
+                    <input type="submit" value="Filtrar" />
+                </div>
+            </form>
+        </div>
+
+        <!-- Aquí se mostrará la tabla de rutas disponibles -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Destino</th>
+                    <th>Nacional</th>
+                    <th>Internacional</th>
+                    <th>Fecha</th>
+                    <th>Hora de Partida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se generarán dinámicamente las filas de la tabla con los datos de las rutas -->
+                <tr>
+                    <td>Ejemplo Destino</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>2024-03-05</td>
+                    <td>12:00 PM</td>
+                </tr>
+                <!-- Puedes agregar más filas según sea necesario -->
+            </tbody>
+        </table>
+        <a href="comienzo-admin.xhtml" class="back-button">&lt; Regresar a Comienzo Admin</a>
+    </body>
+</html>
