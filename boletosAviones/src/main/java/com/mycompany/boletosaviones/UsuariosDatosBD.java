@@ -1,19 +1,10 @@
 package com.mycompany.boletosaviones;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author darkx
- */
 public class UsuariosDatosBD {
-    String nombre;
-    String email;
-    String password;
-    String rol;
+    private String nombre;
+    private String email;
+    private String password;
+    private String rol;
 
     public String getNombre() {
         return nombre;
@@ -46,6 +37,4 @@ public class UsuariosDatosBD {
     public void setRol(String rol) {
         this.rol = rol;
     }
-    
-    
 }

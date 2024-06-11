@@ -31,13 +31,13 @@ import java.util.Collection;
     @UniqueConstraint(columnNames = {"email"})})
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Usuarios.findAll", query = "SELECT u FROM Usuarios_1 u"),
-    @NamedQuery(name = "Usuarios.findById", query = "SELECT u FROM Usuarios_1 u WHERE u.id = :id"),
-    @NamedQuery(name = "Usuarios.findByNombre", query = "SELECT u FROM Usuarios_1 u WHERE u.nombre = :nombre"),
-    @NamedQuery(name = "Usuarios.findByEmail", query = "SELECT u FROM Usuarios_1 u WHERE u.email = :email"),
-    @NamedQuery(name = "Usuarios.findByPassword", query = "SELECT u FROM Usuarios_1 u WHERE u.password = :password"),
-    @NamedQuery(name = "Usuarios.findByRol", query = "SELECT u FROM Usuarios_1 u WHERE u.rol = :rol"),
-    @NamedQuery(name = "Usuarios.findByNombreAndPassword", query = "SELECT u FROM Usuarios_1 u WHERE u.nombre = :nombre && u.password = :password")})
+    @NamedQuery(name = "Usuarios.findAll", query = "SELECT u FROM Usuarios u"),
+    @NamedQuery(name = "Usuarios.findById", query = "SELECT u FROM Usuarios u WHERE u.id = :id"),
+    @NamedQuery(name = "Usuarios.findByNombre", query = "SELECT u FROM Usuarios u WHERE u.nombre = :nombre"),
+    @NamedQuery(name = "Usuarios.findByEmail", query = "SELECT u FROM Usuarios u WHERE u.email = :email"),
+    @NamedQuery(name = "Usuarios.findByPassword", query = "SELECT u FROM Usuarios u WHERE u.password = :password"),
+    @NamedQuery(name = "Usuarios.findByRol", query = "SELECT u FROM Usuarios u WHERE u.rol = :rol"),
+    @NamedQuery(name = "Usuarios.findByNombreAndPassword", query = "SELECT u FROM Usuarios u WHERE u.nombre = :nombre AND u.password = :password")})
 public class Usuarios implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -229,4 +229,15 @@ public class UsuariosJpaController implements Serializable {
 
     }
 
+    public Usuarios findUsuariosByNombreAndPassword(String nombre, String password) {
+        EntityManager em = getEntityManager();
+        try {
+            TypedQuery<Usuarios> query = em.createNamedQuery("Usuarios.findByNombreAndPassword", Usuarios.class);
+            query.setParameter("nombre", nombre);
+            query.setParameter("password", password);
+            return query.getSingleResult();
+        } finally {
+            em.close();
+        }
+    }
 }
