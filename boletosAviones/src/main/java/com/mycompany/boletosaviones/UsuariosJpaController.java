@@ -6,20 +6,25 @@ package com.mycompany.boletosaviones;
 
 import com.mycompany.boletosaviones.exceptions.NonexistentEntityException;
 import com.mycompany.boletosaviones.exceptions.RollbackFailureException;
+import jakarta.annotation.Resource;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import java.io.Serializable;
 import jakarta.persistence.Query;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.PersistenceUnit;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
+import jakarta.transaction.SystemException;
 import jakarta.transaction.UserTransaction;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -36,9 +41,12 @@ public class UsuariosJpaController implements Serializable {
         this.utx = utx;
         this.emf = emf;
     }
-    private UserTransaction utx = null;
+    @Resource
+    private UserTransaction utx;
     @PersistenceUnit(unitName = "Vuelos_y_Boletos_Persistentes")
-    private EntityManagerFactory emf = null;
+    private EntityManagerFactory emf;
+    @PersistenceContext(unitName = "Vuelos_y_Boletos_Persistentes")
+    private EntityManager em;
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
@@ -240,4 +248,39 @@ public class UsuariosJpaController implements Serializable {
             em.close();
         }
     }
+
+    public void registerUser(String nombre, String email, String pw, String rol) {
+//        EntityManager em = getEntityManager();
+        try {
+//            em.getTransaction().begin();
+            utx.begin();
+            System.out.println("lo que tiene em es: " + em);
+            Usuarios usuario = new Usuarios();
+            usuario.setNombre(nombre);
+            usuario.setEmail(email);
+            usuario.setPassword(pw);
+            usuario.setRol(rol);
+            em.persist(usuario);
+            utx.commit();
+//            em.getTransaction().commit();
+        } catch (Exception e) {
+            try {
+                System.out.println("excepción register user:" + e.getMessage());
+                utx.rollback();
+//            if (em.getTransaction().isActive()) {
+//                em.getTransaction().rollback();
+//            }
+                throw new RuntimeException(e);
+            } catch (IllegalStateException ex) {
+                Logger.getLogger(UsuariosJpaController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SecurityException ex) {
+                Logger.getLogger(UsuariosJpaController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SystemException ex) {
+                Logger.getLogger(UsuariosJpaController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } finally {
+            em.close();
+        }
+    }
+
 }

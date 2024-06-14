@@ -37,7 +37,9 @@ import java.util.Collection;
     @NamedQuery(name = "Usuarios.findByEmail", query = "SELECT u FROM Usuarios u WHERE u.email = :email"),
     @NamedQuery(name = "Usuarios.findByPassword", query = "SELECT u FROM Usuarios u WHERE u.password = :password"),
     @NamedQuery(name = "Usuarios.findByRol", query = "SELECT u FROM Usuarios u WHERE u.rol = :rol"),
-    @NamedQuery(name = "Usuarios.findByNombreAndPassword", query = "SELECT u FROM Usuarios u WHERE u.nombre = :nombre AND u.password = :password")})
+    @NamedQuery(name = "Usuarios.findByNombreAndPassword", query = "SELECT u FROM Usuarios u WHERE u.nombre = :nombre AND u.password = :password")
+//    ,@NamedQuery(name = "Usuarios.registerUser", query = "INSERT INTO Usuarios (nombre, email, password, rol) VALUES (:nombre, :email, :password, :rol)")
+})
 public class Usuarios implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -23,27 +23,27 @@
 
             <h:form>
                 <div class="input-group mb-3">
-                    <h:outputLabel for="nombre" value="Nombre(s):" style="width: 100px;" />
-                    <h:inputText class="form-control" id="nombre" required="true" />
+                    <h:inputText value="#{registroController.ud.username}" class="form-control" id="nombre" p:placeholder="Nombre(s): " />
+                    <h:message for="nombre"/>
                 </div>
-
+                
                 <div class="input-group mb-3">
-                    <h:outputLabel for="apellido" value="Apellido(s):" style="width: 100px;" />
-                    <h:inputText class="form-control" id="apellido" required="true" />
-                </div>
-
-                <div class="input-group mb-3">
-                    <h:outputLabel for="correo" value="Correo Electrónico:" style="width: 100px;" />
-                    <h:inputText class="form-control" id="correo" type="email" required="true" />
+                    <h:inputText value="#{registroController.ud.email}" class="form-control" id="correo" type="email" p:placeholder="Correo Electrónico: " />
+                    <h:message for="correo"/>
                 </div>
 
                 <div class="input-group mb-3">
                     <h:outputLabel for="password" value="Contraseña:" style="width: 100px;" />
-                    <h:inputSecret class="form-control" id="password" required="true" />
+                    <h:inputSecret value="#{registroController.ud.password}" class="form-control" id="password" p:placeholder="Contraseña" />
+                </div>
+                
+                <div class="input-group mb-3">
+                    <h:outputLabel for="rol" value="Rol" style="width: 100px;" />
+                    <h:inputText value="#{registroController.ud.rol}" class="form-control" id="rol" p:placeholder="Rol: " />
                 </div>
 
                 <div class="mb-3">
-                    <h:button class="btn btn-success" value="Registrar" outcome="index.xhtml"/>
+                    <h:commandButton class="btn btn-primary" value="Registrar" action="#{registroController.insertUser()}"/>
                 </div>
             </h:form>
         </div>

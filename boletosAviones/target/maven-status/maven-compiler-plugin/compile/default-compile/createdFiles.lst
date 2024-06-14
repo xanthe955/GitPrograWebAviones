@@ -3,6 +3,7 @@ com\mycompany\boletosaviones\UsuariosJpaController.class
 com\mycompany\boletosaviones\VueloController.class
 com\mycompany\boletosaviones\Vuelo.class
 com\mycompany\boletosaviones\Clientes.class
+com\mycompany\boletosaviones\RegistroController.class
 com\mycompany\boletosaviones\Usuarios.class
 com\mycompany\boletosaviones\DBManager.class
 com\mycompany\boletosaviones\UsuariosDatosBD.class
